@@ -1,3 +1,10 @@
 .ipynb_checkpoints
 .vscode
 MNIST
+FashionMNIST
+gtsrb
+*.zip
+*.txt
+*.data
+*.names
+*.csv
