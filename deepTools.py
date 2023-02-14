@@ -96,9 +96,7 @@ def train_test_val_split(df, feature_columns, label_column, ct):
 
 
 
-
-
-def train_model(model, device, dataloaders, dataset_sizes, criterion, optimizer, scheduler, num_epochs=25):
+def train_classification_model(model, device, dataloaders, dataset_sizes, criterion, optimizer, scheduler, num_epochs=25):
     since = time.time()
 
     best_model_wts = copy.deepcopy(model.state_dict()) # Los mejores pesos se deben guardar por separado
@@ -129,9 +127,9 @@ def train_model(model, device, dataloaders, dataset_sizes, criterion, optimizer,
 
             # Iterar con los datos
             for inputs, labels in dataloaders[phase]:
-                # Importante: se deben aplanar todos los puntos de datos
-                # para que sean compatibles con el modelo
-                inputs = inputs.view(inputs.shape[0],-1)
+                # Importante: Hace falta aplanar los inputs?
+                # inputs = inputs.view(inputs.shape[0],-1)
+
                 inputs = inputs.to(device)
                 labels = labels.to(device)
 
