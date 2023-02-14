@@ -8,3 +8,4 @@ gtsrb
 *.data
 *.names
 *.csv
+*dataset
